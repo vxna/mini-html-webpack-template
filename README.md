@@ -1,6 +1,6 @@
 # @vxna/mini-html-webpack-template
 
-Minimum viable template for [mini-html-webpack-plugin](https://github.com/bebraw/mini-html-webpack-plugin), that extends default features with html minification and useful subset of options
+Template for [mini-html-webpack-plugin](https://github.com/bebraw/mini-html-webpack-plugin), that extends default features with html minification and useful subset of options
 
 ## Warning
 
