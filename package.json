@@ -1,6 +1,6 @@
 {
   "name": "@vxna/mini-html-webpack-template",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Minimum viable template for mini-html-webpack-plugin",
   "author": "@vxna",
   "license": "MIT",
