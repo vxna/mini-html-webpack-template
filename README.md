@@ -1,6 +1,6 @@
 # @vxna/mini-html-webpack-template
 
-Template for [mini-html-webpack-plugin](https://github.com/bebraw/mini-html-webpack-plugin), that extends default features with html minification and useful subset of options
+Template for [mini-html-webpack-plugin](https://github.com/bebraw/mini-html-webpack-plugin) that extends default features with useful subset of options
 
 ## Warning
 
@@ -19,7 +19,7 @@ module.exports = {
       context: {
         title: 'common-usage',
         container: 'root',
-        minify: false
+        trimWhitespace: true
       },
       template: require('@vxna/mini-html-webpack-template')
     })
@@ -29,12 +29,12 @@ module.exports = {
 
 ## Common options
 
-|      Name       |    Type     |    Default     | Description             |
-| :-------------: | :---------: | :------------: | :---------------------- |
-|   **`lang`**    | `{String}`  |  `undefined`   | Document language       |
-|   **`title`**   | `{String}`  | `'sample-app'` | Document title          |
-| **`container`** | `{String}`  |  `undefined`   | Application mount point |
-|  **`minify`**   | `{Boolean}` |     `true`     | Safe HTML minification  |
+|         Name         |    Type     |    Default     | Description                        |
+| :------------------: | :---------: | :------------: | :--------------------------------- |
+|      **`lang`**      | `{String}`  |  `undefined`   | Set document language              |
+|     **`title`**      | `{String}`  | `'sample-app'` | Set document title                 |
+|   **`container`**    | `{String}`  |  `undefined`   | Set application mount point        |
+| **`trimWhitespace`** | `{Boolean}` |  `undefined`   | Safe document whitespace reduction |
 
 ## Extended usage
 
@@ -87,6 +87,33 @@ module.exports = {
 |   **`head.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                     |
 | **`body.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs |
 |   **`body.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                     |
+
+## Extended minification
+
+For custom needs [html-minifier](https://github.com/kangax/html-minifier) middleware and all of it's [options](https://github.com/kangax/html-minifier#options-quick-reference) could be used
+
+**webpack.config.js**
+
+```js
+const { minify } = require('html-minifier')
+const MiniHtmlWebpackPlugin = require('mini-html-webpack-plugin')
+
+module.exports = {
+  plugins: [
+    new MiniHtmlWebpackPlugin({
+      context: {
+        title: 'extended-minification'
+      },
+      template: ctx =>
+        minify(require('@vxna/mini-html-webpack-template')(ctx), {
+          collapseWhitespace: true,
+          minifyCSS: true,
+          minifyJS: true
+        })
+    })
+  ]
+}
+```
 
 ## Inspired by
 

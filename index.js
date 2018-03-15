@@ -12,7 +12,16 @@ const {
 } = require('mini-html-webpack-plugin')
 
 function template(ctx) {
-  const { css, js, lang, title, head = [], body = [], container, minify } = ctx
+  const {
+    css,
+    js,
+    lang,
+    title,
+    head = [],
+    body = [],
+    container,
+    trimWhitespace
+  } = ctx
 
   const doc = html`
   <!DOCTYPE html>
@@ -36,9 +45,7 @@ function template(ctx) {
     </body>
   </html>`
 
-  return minify || process.env.NODE_ENV === 'production'
-    ? oneLineTrim(doc)
-    : emptyLineTrim(doc)
+  return trimWhitespace ? oneLineTrim(doc) : emptyLineTrim(doc)
 }
 
 const emptyLineTrim = new TemplateTag(
