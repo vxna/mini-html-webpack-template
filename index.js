@@ -12,11 +12,11 @@ const {
 } = require('mini-html-webpack-plugin')
 
 function template(ctx) {
-  const { css, js, lang, title, head, body, container, minify } = ctx
+  const { css, js, lang, title, head = [], body = [], container, minify } = ctx
 
   const doc = html`
   <!DOCTYPE html>
-  <html${lang && `lang=${lang}`}>
+  <html${lang && ` lang="${lang}"`}>
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
