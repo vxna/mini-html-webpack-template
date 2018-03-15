@@ -12,7 +12,7 @@ const {
 } = require('mini-html-webpack-plugin')
 
 function template(ctx) {
-  const { css, js, lang, title, head, body, container, minify } = ctx
+  let { css, js, lang, title, head = [], body = [], container, minify } = ctx
 
   const doc = html`
   <!DOCTYPE html>
@@ -51,19 +51,19 @@ const wrap = item =>
     .map(([key, val]) => `${key}="${val}"`)
     .join(' ')
 
-function generateMetaTags(items) {
+function generateMetaTags(items = []) {
   return items.map(item => `<meta ${wrap(item)}>`)
 }
 
-function generateLinkTags(items) {
+function generateLinkTags(items = []) {
   return items.map(item => `<link ${wrap(item)}>`)
 }
 
-function generateScriptTags(items) {
+function generateScriptTags(items = []) {
   return items.map(item => `<script ${wrap(item)}></script>`)
 }
 
-function generateRawTags(items) {
+function generateRawTags(items = [] || '') {
   if (typeof items === 'string' || items instanceof String) {
     return items
   }
