@@ -17,9 +17,10 @@ function template(ctx) {
     js,
     lang,
     title,
+    favicon,
+    container,
     head = [],
     body = [],
-    container,
     trimWhitespace
   } = ctx
 
@@ -31,6 +32,7 @@ function template(ctx) {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>${title || 'sample-app'}</title>
+      ${favicon && `<link rel="icon" type="image/x-icon" href="${favicon}">`}
       ${generateMetaTags(head.meta)}
       ${generateLinkTags(head.links)}
       ${generateRawTags(head.raw)}
@@ -48,26 +50,16 @@ function template(ctx) {
   return trimWhitespace ? oneLineTrim(doc) : emptyLineTrim(doc)
 }
 
-const emptyLineTrim = new TemplateTag(
-  replaceResultTransformer(/^\s*[\r\n]/gm, ''),
-  trimResultTransformer
-)
-
-const wrap = item =>
-  Object.entries(item)
-    .map(([key, val]) => `${key}="${val}"`)
-    .join(' ')
-
 function generateMetaTags(items = []) {
-  return items.map(item => `<meta ${wrap(item)}>`)
+  return items.map(item => `<meta ${wrapItems(item)}>`)
 }
 
 function generateLinkTags(items = []) {
-  return items.map(item => `<link ${wrap(item)}>`)
+  return items.map(item => `<link ${wrapItems(item)}>`)
 }
 
 function generateScriptTags(items = []) {
-  return items.map(item => `<script ${wrap(item)}></script>`)
+  return items.map(item => `<script ${wrapItems(item)}></script>`)
 }
 
 function generateRawTags(items = []) {
@@ -76,5 +68,16 @@ function generateRawTags(items = []) {
   }
   return items.map(item => item)
 }
+
+function wrapItems(item) {
+  Object.entries(item)
+    .map(([key, val]) => `${key}="${val}"`)
+    .join(' ')
+}
+
+const emptyLineTrim = new TemplateTag(
+  replaceResultTransformer(/^\s*[\r\n]/gm, ''),
+  trimResultTransformer
+)
 
 module.exports = template

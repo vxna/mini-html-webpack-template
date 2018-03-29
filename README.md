@@ -18,6 +18,7 @@ module.exports = {
     new MiniHtmlWebpackPlugin({
       context: {
         title: 'common-usage',
+        favicon: 'https://assets-cdn.github.com/favicon.ico',
         container: 'root',
         trimWhitespace: true
       },
@@ -33,6 +34,7 @@ module.exports = {
 | :------------------: | :---------: | :------------: | :--------------------------------- |
 |      **`lang`**      | `{String}`  |  `undefined`   | Set document language              |
 |     **`title`**      | `{String}`  | `'sample-app'` | Set document title                 |
+|    **`favicon`**     | `{String}`  |  `undefined`   | Set document favicon               |
 |   **`container`**    | `{String}`  |  `undefined`   | Set application mount point        |
 | **`trimWhitespace`** | `{Boolean}` |  `undefined`   | Safe document whitespace reduction |
 
@@ -61,9 +63,9 @@ module.exports = {
           ],
           links: [
             {
-              rel: 'shortcut icon',
-              href: 'https://assets-cdn.github.com/favicon.ico',
-              type: 'image/x-icon'
+              rel: 'icon',
+              type: 'image/x-icon',
+              href: 'https://assets-cdn.github.com/favicon.ico'
             }
           ]
         },
