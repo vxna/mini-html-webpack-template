@@ -13,6 +13,7 @@ const {
 
 function template(ctx) {
   const {
+    publicPath,
     css,
     js,
     lang,
@@ -37,13 +38,13 @@ function template(ctx) {
       ${generateLinkTags(head.links)}
       ${generateRawTags(head.raw)}
       ${generateScriptTags(head.scripts)}
-      ${generateCSSReferences(css)}
+      ${generateCSSReferences(css, publicPath)}
     </head>
     <body>
       ${container && `<div id="${container}"></div>`}
       ${generateRawTags(body.raw)}
       ${generateScriptTags(body.scripts)}
-      ${generateJSReferences(js)}
+      ${generateJSReferences(js, publicPath)}
     </body>
   </html>`
 

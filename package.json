@@ -9,6 +9,7 @@
     "type": "git",
     "url": "https://github.com/vxna/mini-html-webpack-template.git"
   },
+  "keywords": ["webpack", "mini-html-webpack-plugin"],
   "engines": {
     "node": ">= 6.9.0 || >= 8.9.0"
   },
@@ -16,7 +17,7 @@
     "common-tags": "^1.7.2"
   },
   "peerDependencies": {
-    "mini-html-webpack-plugin": "^0.1.1",
+    "mini-html-webpack-plugin": "^0.1.4",
     "webpack": "^4.1.0"
   }
 }
