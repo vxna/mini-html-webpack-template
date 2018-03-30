@@ -17,7 +17,7 @@
     "common-tags": "^1.7.2"
   },
   "peerDependencies": {
-    "mini-html-webpack-plugin": "^0.1.4",
+    "mini-html-webpack-plugin": "^0.2.1",
     "webpack": "^4.1.0"
   }
 }
