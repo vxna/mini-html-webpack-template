@@ -13,7 +13,25 @@
   "engines": {
     "node": ">= 6.9.0"
   },
+  "scripts": {
+    "test": "jest",
+    "posttest": "npm run format",
+    "format": "prettier --write **/*.{js,md}",
+    "precommit": "npm run test"
+  },
   "dependencies": {
     "common-tags": "^1.7.2"
+  },
+  "devDependencies": {
+    "@webpack-contrib/test-utils": "^0.1.2",
+    "husky": "^0.14.3",
+    "jest": "^22.4.3",
+    "mini-html-webpack-plugin": "^0.2.2",
+    "prettier": "^1.11.1",
+    "webpack": "^4.4.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   }
 }
