@@ -5,17 +5,23 @@
   "author": "@vxna",
   "license": "MIT",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/vxna/mini-html-webpack-template.git"
   },
-  "keywords": ["webpack", "mini-html-webpack-plugin"],
+  "keywords": [
+    "webpack", 
+    "mini-html-webpack-plugin"
+  ],
   "engines": {
     "node": ">= 6.9.0"
   },
   "scripts": {
     "test": "jest",
-    "format": "prettier --write **/*.{js,json,md}",
+    "format": "prettier --write **/*.{js,md}",
     "precommit": "npm run test && npm run format"
   },
   "dependencies": {
