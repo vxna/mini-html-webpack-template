@@ -1,6 +1,6 @@
 {
   "name": "@vxna/mini-html-webpack-template",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Minimum viable template for mini-html-webpack-plugin",
   "author": "@vxna",
   "license": "MIT",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "jest",
-    "format": "prettier --write **/*.{js,md}",
+    "format": "prettier --write **/*.{js,json,md}",
     "precommit": "npm run test && npm run format"
   },
   "dependencies": {
