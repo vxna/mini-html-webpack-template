@@ -60,14 +60,9 @@ test('advanced options', () => {
             src: '/bundle.js'
           }
         ],
-        raw: '<style id="head-raw-string"></style>',
-        raw: [
-          '<style id="head-raw-array-1"></style>',
-          '<style id="head-raw-array-2"></style>'
-        ]
+        raw: '<style id="head-raw-string"></style>'
       },
       body: {
-        raw: '<div id="body-raw-string"></div>',
         raw: [
           '<script id="body-raw-array-1"></script>',
           '<script id="body-raw-array-2"></script>'

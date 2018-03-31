@@ -35,6 +35,9 @@
     "prettier": "^1.11.1",
     "webpack": "^4.4.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "prettier": {
     "singleQuote": true,
     "semi": false

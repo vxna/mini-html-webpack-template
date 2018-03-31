@@ -11,8 +11,7 @@ exports[`advanced options 1`] = `
     <meta name=\\"description\\" content=\\"mini-html-webpack-template\\">
     <meta property=\\"og:description\\" content=\\"mini-html-webpack-template\\">
     <link rel=\\"icon\\" type=\\"image/x-icon\\" href=\\"/favicon.ico\\">
-    <style id=\\"head-raw-array-1\\"></style>
-    <style id=\\"head-raw-array-2\\"></style>
+    <style id=\\"head-raw-string\\"></style>
     <script async=\\"\\" type=\\"text/javascript\\" src=\\"/bundle.js\\"></script>
   </head>
   <body>
