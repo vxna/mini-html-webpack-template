@@ -71,8 +71,8 @@ function generateRawTags(items = []) {
 }
 
 function wrapItems(item) {
-  return Object.entries(item)
-    .map(([key, val]) => `${key}="${val}"`)
+  return Object.keys(item)
+    .map(key => `${key}="${item[key]}"`)
     .join(' ')
 }
 
