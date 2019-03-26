@@ -66,7 +66,7 @@ function generateRawTags(tags = []) {
   return tags.map(tag => tag)
 }
 
-function webpackArtifacts(files = [], publicPath = '', attrs = '', type) {
+function webpackArtifacts(files = [], publicPath = '', attrs = [], type) {
   const tag = file =>
     type === 'script'
       ? [].concat(attrs, [{ src: publicPath + file }])

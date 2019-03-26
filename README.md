@@ -71,6 +71,14 @@ module.exports = {
         },
         body: {
           raw: '<div id="root"></div>'
+        },
+        attrs: {
+          js: [
+            {
+              async: '',
+              type: 'text/javascript'
+            }
+          ]
         }
       },
       template: require('@vxna/mini-html-webpack-template')
@@ -81,14 +89,16 @@ module.exports = {
 
 ## Extended options
 
-|        Name        |       Type        |   Default   | Description                             |
-| :----------------: | :---------------: | :---------: | :-------------------------------------- |
-|  **`head.meta`**   |     `{Array}`     | `undefined` | Array of objects with key + value pairs |
-|  **`head.links`**  |     `{Array}`     | `undefined` | Array of objects with key + value pairs |
-| **`head.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs |
-|   **`head.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                     |
-| **`body.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs |
-|   **`body.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                     |
+|        Name        |       Type        |   Default   | Description                               |
+| :----------------: | :---------------: | :---------: | :---------------------------------------- |
+|  **`head.meta`**   |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
+|  **`head.links`**  |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
+| **`head.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
+|   **`head.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                       |
+| **`body.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
+|   **`body.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                       |
+|   **`attrs.js`**   |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
+|  **`attrs.css`**   |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
 
 ## Advanced minification
 
