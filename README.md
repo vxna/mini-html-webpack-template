@@ -90,7 +90,7 @@ module.exports = {
 | **`body.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs |
 |   **`body.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                     |
 
-## Extended minification
+## Advanced minification
 
 For custom needs [html-minifier](https://github.com/kangax/html-minifier) middleware and all of it's [options](https://github.com/kangax/html-minifier#options-quick-reference) could be used
 
@@ -104,7 +104,7 @@ module.exports = {
   plugins: [
     new MiniHtmlWebpackPlugin({
       context: {
-        title: 'extended-minification'
+        title: 'advanced-minification'
       },
       template: ctx =>
         minify(require('@vxna/mini-html-webpack-template')(ctx), {
@@ -116,6 +116,10 @@ module.exports = {
   ]
 }
 ```
+
+## Complex security features
+
+[SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) is out of scope of this project and it's recommended to use [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) with tools like [webpack-subresource-integrity](webpack-subresource-integrity) or others.
 
 ## Inspired by
 
