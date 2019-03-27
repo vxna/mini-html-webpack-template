@@ -1,6 +1,12 @@
-/node_modules/
-.vscode
-*.log
-yarn-debug.log*
-yarn-error.log*
+node_modules/
+.DS_Store
 Thumbs.db
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.log
+yarn.lock
+.eslintcache
+coverage/
+Changelog.md

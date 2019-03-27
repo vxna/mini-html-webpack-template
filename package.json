@@ -1,6 +1,6 @@
 {
   "name": "@vxna/mini-html-webpack-template",
-  "version": "0.1.7",
+  "version": "0.0.0-development",
   "description": "Minimum viable template for mini-html-webpack-plugin",
   "author": "@vxna",
   "license": "MIT",
@@ -13,33 +13,57 @@
     "url": "https://github.com/vxna/mini-html-webpack-template.git"
   },
   "keywords": [
-    "webpack", 
+    "webpack",
     "mini-html-webpack-plugin"
   ],
   "engines": {
     "node": ">= 6.9.0"
   },
   "scripts": {
-    "test": "jest",
+    "pretest": "npm run lint",
+    "test": "true && npm run test:jest",
+    "posttest": "npm run format",
+    "lint": "eslint . --cache --fix",
     "format": "prettier --write **/*.{js,md}",
-    "precommit": "npm run test && npm run format"
+    "precommit": "lint-staged",
+    "test:jest": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "common-tags": "^1.7.2"
+    "common-tags": "^1.8.0"
   },
   "devDependencies": {
-    "@webpack-contrib/test-utils": "^0.1.2",
-    "husky": "^0.14.3",
-    "jest": "^22.4.3",
+    "@webpack-contrib/test-utils": "^0.1.3",
+    "eslint": "^5.15.3",
+    "eslint-config-tamia": "^6.0.2",
+    "husky": "^1.3.1",
+    "jest": "^24.5.0",
+    "lint-staged": "^8.1.5",
     "mini-html-webpack-plugin": "^0.2.3",
-    "prettier": "^1.11.1",
-    "webpack": "^4.4.1"
+    "prettier": "^1.16.4",
+    "webpack": "^4.29.6",
+    "semantic-release": "^15.13.3"
   },
   "publishConfig": {
     "access": "public"
   },
+  "eslintConfig": {
+    "extends": "tamia"
+  },
   "prettier": {
     "singleQuote": true,
     "semi": false
+  },
+  "lint-staged": {
+    "*.{js,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
