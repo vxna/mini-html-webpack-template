@@ -21,15 +21,14 @@
   },
   "scripts": {
     "pretest": "npm run lint",
-    "test": "true && npm run test:jest",
-    "posttest": "npm run format",
-    "lint": "eslint . --cache --fix",
-    "format": "prettier --write **/*.{js,md}",
-    "precommit": "lint-staged",
+    "test": "npm run test:jest",
     "test:jest": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "semantic-release": "semantic-release"
+    "posttest": "npm run format",
+    "lint": "eslint . --cache --fix",
+    "format": "prettier --write **/*.{js,md}",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "common-tags": "^1.8.0"
@@ -59,12 +58,13 @@
     "semi": false
   },
   "lint-staged": {
-    "*.{js,md}": [
+    "*.js": [
+      "eslint --fix",
       "prettier --write",
       "git add"
     ],
-    "*.js": [
-      "eslint --fix",
+    "*.md": [
+      "prettier --write",
       "git add"
     ]
   }
