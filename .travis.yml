@@ -1,16 +1,26 @@
 language: node_js
-cache:
-  directories:
-    - node_modules
+
 node_js:
   - 6
   - 8
   - 9
-after_success:
-  - npm install --no-save semantic-release semantic-release-tamia
-  - >-
-    npx travis-deploy-once "semantic-release --analyze-commits semantic-release-tamia/analyzeCommits --verify-release
-    semantic-release-tamia/verifyRelease --generate-notes semantic-release-tamia/generateNotes"
+
+before_install:
+  - if [[ `npm -v` != 5.7* ]]; then npm install -g npm@'>=5.7.1'; fi
+
 branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  only:
+    - master
+
+stages:
+  - test
+  - name: release
+    if: type != pull_request AND branch = master
+
+jobs:
+  include:
+    - stage: release
+      script:
+        - npm install --no-save semantic-release-tamia
+        - >-
+          npx semantic-release --analyze-commits semantic-release-tamia/analyzeCommits --verify-release semantic-release-tamia/verifyRelease --generate-notes semantic-release-tamia/generateNotes
