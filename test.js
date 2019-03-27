@@ -90,8 +90,8 @@ test('options: output attrs', () => {
       favicon: '/favicon.ico',
       container: 'root',
       attrs: {
-        js: [{ async: '', type: 'text/javascript' }],
-        css: [{ type: 'text/css' }]
+        js: { async: '', type: 'text/javascript' },
+        css: { type: 'text/css' }
       }
     })
   ).then(result => {

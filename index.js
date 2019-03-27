@@ -66,15 +66,13 @@ function generateRawTags(tags = []) {
   return tags.map(tag => tag)
 }
 
-function webpackArtifacts(files = [], publicPath = '', attrs = [], type) {
+function webpackArtifacts(files = [], publicPath = '', attrs = {}, type) {
   const tag = file =>
     type === 'script'
-      ? [...attrs, ...[{ src: publicPath + file }]]
-      : [...attrs, ...[{ rel: 'stylesheet', href: publicPath + file }]]
+      ? Object.assign(attrs, { src: publicPath + file })
+      : Object.assign(attrs, { rel: 'stylesheet', href: publicPath + file })
 
-  return files
-    .map(file => generateTags([Object.assign(...tag(file))], type))
-    .join('\n')
+  return files.map(file => generateTags([tag(file)], type)).join('\n')
 }
 
 const emptyLineTrim = new TemplateTag(

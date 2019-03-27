@@ -30,13 +30,13 @@ module.exports = {
 
 ## Common options
 
-| Name                 |    Type     |    Default     | Description                        |
-| -------------------- | :---------: | :------------: | :--------------------------------- |
-| **`lang`**           | `{String}`  |  `undefined`   | Set document language              |
+| Name                 | Type        | Default        | Description                        |
+| -------------------- | ----------- | -------------- | ---------------------------------- |
+| **`lang`**           | `{String}`  | `undefined`    | Set document language              |
 | **`title`**          | `{String}`  | `'sample-app'` | Set document title                 |
-| **`favicon`**        | `{String}`  |  `undefined`   | Set document favicon               |
-| **`container`**      | `{String}`  |  `undefined`   | Set application mount point        |
-| **`trimWhitespace`** | `{Boolean}` |  `undefined`   | Safe document whitespace reduction |
+| **`favicon`**        | `{String}`  | `undefined`    | Set document favicon               |
+| **`container`**      | `{String}`  | `undefined`    | Set application mount point        |
+| **`trimWhitespace`** | `{Boolean}` | `undefined`    | Safe document whitespace reduction |
 
 ## Extended usage
 
@@ -62,12 +62,10 @@ module.exports = {
           raw: '<div id="root"></div>'
         },
         attrs: {
-          js: [
-            {
-              async: '',
-              type: 'text/javascript'
-            }
-          ]
+          js: {
+            async: '',
+            type: 'text/javascript'
+          }
         }
       },
       template: require('@vxna/mini-html-webpack-template')
@@ -78,16 +76,16 @@ module.exports = {
 
 ## Extended options
 
-| Name               |       Type        |   Default   | Description                               |
-| ------------------ | :---------------: | :---------: | :---------------------------------------- |
-| **`head.meta`**    |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
-| **`head.links`**   |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
-| **`head.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
-| **`head.raw`**     | `{Array\|String}` | `undefined` | Raw document markup                       |
-| **`body.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
-| **`body.raw`**     | `{Array\|String}` | `undefined` | Raw document markup                       |
-| **`attrs.js`**     |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
-| **`attrs.css`**    |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
+| Name               | Type              | Default     | Description                               |
+| ------------------ | ----------------- | ----------- | ----------------------------------------- |
+| **`head.meta`**    | `{Array}`         | `undefined` | Array of objects with key + value pairs   |
+| **`head.links`**   | `{Array}`         | `undefined` | Array of objects with key + value pairs   |
+| **`head.scripts`** | `{Array}`         | `undefined` | Array of objects with key + value pairs   |
+| **`head.raw`**     | `{Array\|String}` | `undefined` | Generates raw document markup             |
+| **`body.scripts`** | `{Array}`         | `undefined` | Array of objects with key + value pairs   |
+| **`body.raw`**     | `{Array\|String}` | `undefined` | Generates raw document markup             |
+| **`attrs.js`**     | `{Object}`        | `undefined` | Applies html attributes to webpack output |
+| **`attrs.css`**    | `{Object}`        | `undefined` | Applies html attributes to webpack output |
 
 ## Advanced minification
 
