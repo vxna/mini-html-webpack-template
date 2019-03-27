@@ -1,5 +1,7 @@
 # @vxna/mini-html-webpack-template
 
+[![Build Status](https://travis-ci.org/vxna/@vxna/mini-html-webpack-template.svg)](https://travis-ci.org/vxna/@vxna/mini-html-webpack-template)
+
 Template for [mini-html-webpack-plugin](https://github.com/bebraw/mini-html-webpack-plugin) that extends default features with useful subset of options
 
 ## Warning
