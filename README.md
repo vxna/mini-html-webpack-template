@@ -30,12 +30,12 @@ module.exports = {
 
 ## Common options
 
-|         Name         |    Type     |    Default     | Description                        |
-| :------------------: | :---------: | :------------: | :--------------------------------- |
-|      **`lang`**      | `{String}`  |  `undefined`   | Set document language              |
-|     **`title`**      | `{String}`  | `'sample-app'` | Set document title                 |
-|    **`favicon`**     | `{String}`  |  `undefined`   | Set document favicon               |
-|   **`container`**    | `{String}`  |  `undefined`   | Set application mount point        |
+| Name                 |    Type     |    Default     | Description                        |
+| -------------------- | :---------: | :------------: | :--------------------------------- |
+| **`lang`**           | `{String}`  |  `undefined`   | Set document language              |
+| **`title`**          | `{String}`  | `'sample-app'` | Set document title                 |
+| **`favicon`**        | `{String}`  |  `undefined`   | Set document favicon               |
+| **`container`**      | `{String}`  |  `undefined`   | Set application mount point        |
 | **`trimWhitespace`** | `{Boolean}` |  `undefined`   | Safe document whitespace reduction |
 
 ## Extended usage
@@ -55,17 +55,6 @@ module.exports = {
             {
               name: 'description',
               content: 'mini-html-webpack-template'
-            },
-            {
-              property: 'og:description',
-              content: 'mini-html-webpack-template'
-            }
-          ],
-          links: [
-            {
-              rel: 'icon',
-              type: 'image/x-icon',
-              href: 'https://assets-cdn.github.com/favicon.ico'
             }
           ]
         },
@@ -89,16 +78,16 @@ module.exports = {
 
 ## Extended options
 
-|        Name        |       Type        |   Default   | Description                               |
-| :----------------: | :---------------: | :---------: | :---------------------------------------- |
-|  **`head.meta`**   |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
-|  **`head.links`**  |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
+| Name               |       Type        |   Default   | Description                               |
+| ------------------ | :---------------: | :---------: | :---------------------------------------- |
+| **`head.meta`**    |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
+| **`head.links`**   |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
 | **`head.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
-|   **`head.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                       |
+| **`head.raw`**     | `{Array\|String}` | `undefined` | Raw document markup                       |
 | **`body.scripts`** |     `{Array}`     | `undefined` | Array of objects with key + value pairs   |
-|   **`body.raw`**   | `{Array\|String}` | `undefined` | Raw document markup                       |
-|   **`attrs.js`**   |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
-|  **`attrs.css`**   |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
+| **`body.raw`**     | `{Array\|String}` | `undefined` | Raw document markup                       |
+| **`attrs.js`**     |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
+| **`attrs.css`**    |     `{Array}`     | `undefined` | Applies html attributes to webpack output |
 
 ## Advanced minification
 
@@ -129,7 +118,7 @@ module.exports = {
 
 ## Complex security features
 
-[SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) is out of scope of this project and it's recommended to use [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) with tools like [webpack-subresource-integrity](webpack-subresource-integrity) or others.
+[SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) is out of scope of this project and it's recommended to use [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) with it's ecosystem tools.
 
 ## Inspired by
 
