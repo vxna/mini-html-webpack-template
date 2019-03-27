@@ -5,15 +5,22 @@ node_js:
   - 8
   - 9
 
+before_install:
+  - if [[ `npm -v` != 5.7* ]]; then npm install -g npm@'>=5.7.1'; fi
+
 branches:
   only:
     - master
 
-before_install:
-  - if [[ `npm -v` != 5.7* ]]; then npm install -g npm@'>=5.7.1'; fi
+stages:
+  - test
+  - name: release
+    if: type != pull_request AND branch = master
 
-after_success:
-  - npm install --no-save semantic-release-tamia
-  - >-
-    npx semantic-release --analyze-commits semantic-release-tamia/analyzeCommits --verify-release semantic-release-tamia/verifyRelease --generate-notes semantic-release-tamia/generateNotes
-         
+jobs:
+  include:
+    - stage: release
+      script:
+        - npm install --no-save semantic-release-tamia
+        - >-
+          npx semantic-release --analyze-commits semantic-release-tamia/analyzeCommits --verify-release semantic-release-tamia/verifyRelease --generate-notes semantic-release-tamia/generateNotes
