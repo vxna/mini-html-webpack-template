@@ -1,16 +1,20 @@
 language: node_js
+
 node_js:
   - 6
   - 8
   - 9
+
 branches:
   only:
     - master
+
 before_install:
-  - 'if [[ `npm -v` != 5.7* ]]; then npm install -g npm@''>=5.7.1''; fi'
+  - if [[ `npm -v` != 5.7* ]]; then npm install -g npm@'>=5.7.1'; fi
+
 after_success:
+  - if type != pull_request AND branch = master
   - npm install --no-save semantic-release-tamia
   - >-
-    npx semantic-release --analyze-commits semantic-release-tamia/analyzeCommits --verify-release
-    semantic-release-tamia/verifyRelease --generate-notes semantic-release-tamia/generateNotes
-
+    npx semantic-release --analyze-commits semantic-release-tamia/analyzeCommits --verify-release semantic-release-tamia/verifyRelease --generate-notes semantic-release-tamia/generateNotes
+         
