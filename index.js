@@ -69,15 +69,12 @@ function generateRawTags(tags = []) {
 function webpackArtifacts(files = [], publicPath = '', attrs = [], type) {
   const tag = file =>
     type === 'script'
-      ? [].concat(attrs, [{ src: publicPath + file }])
-      : [].concat(attrs, [{ rel: 'stylesheet', href: publicPath + file }])
+      ? [...attrs, ...[{ src: publicPath + file }]]
+      : [...attrs, ...[{ rel: 'stylesheet', href: publicPath + file }]]
 
-  return (
-    files
-      // eslint-disable-next-line prefer-spread
-      .map(file => generateTags([Object.assign.apply(Object, tag(file))], type))
-      .join('\n')
-  )
+  return files
+    .map(file => generateTags([Object.assign(...tag(file))], type))
+    .join('\n')
 }
 
 const emptyLineTrim = new TemplateTag(
