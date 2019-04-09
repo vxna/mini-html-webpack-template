@@ -6,7 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const getConfig = (options, config = {}) =>
   Object.assign(
     {
-      entry: path.resolve(__dirname, 'test', 'fixtures'),
+      entry: path.resolve(__dirname, 'fixtures/base'),
       rules: [
         {
           test: /\.css$/,
@@ -16,7 +16,7 @@ const getConfig = (options, config = {}) =>
       plugins: [
         new MiniHtmlWebpackPlugin({
           context: options,
-          template: require('./')
+          template: require('../')
         }),
         new MiniCssExtractPlugin()
       ]
