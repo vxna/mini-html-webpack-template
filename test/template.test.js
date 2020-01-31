@@ -1,3 +1,4 @@
+/* eslint-env jest */
 const path = require('path')
 const compiler = require('@webpack-contrib/test-utils')
 const MiniHtmlWebpackPlugin = require('mini-html-webpack-plugin')
@@ -16,7 +17,7 @@ const getConfig = (options, config = {}) =>
       plugins: [
         new MiniHtmlWebpackPlugin({
           context: options,
-          template: require('../')
+          template: require('../src')
         }),
         new MiniCssExtractPlugin()
       ]
