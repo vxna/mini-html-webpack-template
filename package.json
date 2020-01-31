@@ -17,7 +17,7 @@
     "mini-html-webpack-plugin"
   ],
   "engines": {
-    "node": ">= 8"
+    "node": ">= 10"
   },
   "scripts": {
     "pretest": "yarn lint",
