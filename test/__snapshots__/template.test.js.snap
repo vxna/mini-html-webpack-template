@@ -18,7 +18,6 @@ exports[`options: advanced 1`] = `
   <body>
     <script id=\\"body-raw-array-1\\"></script>
     <script id=\\"body-raw-array-2\\"></script>
-    <script src=\\"runtime~main.js\\"></script>
     <script src=\\"main.js\\"></script>
   </body>
 </html>"
@@ -37,7 +36,6 @@ exports[`options: common 1`] = `
   </head>
   <body>
     <div id=\\"root\\"></div>
-    <script src=\\"runtime~main.js\\"></script>
     <script src=\\"main.js\\"></script>
   </body>
 </html>"
@@ -56,10 +54,9 @@ exports[`options: output attrs 1`] = `
   </head>
   <body>
     <div id=\\"root\\"></div>
-    <script async=\\"\\" type=\\"text/javascript\\" src=\\"runtime~main.js\\"></script>
     <script async=\\"\\" type=\\"text/javascript\\" src=\\"main.js\\"></script>
   </body>
 </html>"
 `;
 
-exports[`options: trim whitespace 1`] = `"<!DOCTYPE html><html><head><meta charset=\\"utf-8\\"><meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\"><meta http-equiv=\\"X-UA-Compatible\\" content=\\"ie=edge\\"><title>trim whitespace</title><link rel=\\"icon\\" type=\\"image/x-icon\\" href=\\"/favicon.ico\\"><link rel=\\"stylesheet\\" href=\\"main.css\\"></head><body><div id=\\"root\\"></div><script src=\\"runtime~main.js\\"></script><script src=\\"main.js\\"></script></body></html>"`;
+exports[`options: trim whitespace 1`] = `"<!DOCTYPE html><html><head><meta charset=\\"utf-8\\"><meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\"><meta http-equiv=\\"X-UA-Compatible\\" content=\\"ie=edge\\"><title>trim whitespace</title><link rel=\\"icon\\" type=\\"image/x-icon\\" href=\\"/favicon.ico\\"><link rel=\\"stylesheet\\" href=\\"main.css\\"></head><body><div id=\\"root\\"></div><script src=\\"main.js\\"></script></body></html>"`;

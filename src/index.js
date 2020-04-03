@@ -3,7 +3,7 @@ const {
   oneLineTrim,
   TemplateTag,
   trimResultTransformer,
-  replaceResultTransformer
+  replaceResultTransformer,
 } = require('common-tags')
 
 function template(ctx) {
@@ -18,7 +18,7 @@ function template(ctx) {
     head = {},
     body = {},
     attrs = {},
-    trimWhitespace
+    trimWhitespace,
   } = ctx
 
   const doc = html`
@@ -50,29 +50,29 @@ function template(ctx) {
 
 function mapAttrs(tag) {
   return Object.keys(tag)
-    .map(attr => `${attr}="${tag[attr]}"`)
+    .map((attr) => `${attr}="${tag[attr]}"`)
     .join(' ')
 }
 
 function generateTags(tags = [], type) {
   const closing = type === ('script' || 'style') ? `></${type}>` : '>'
-  return tags.map(tag => `<${type} ${mapAttrs(tag)}${closing}`)
+  return tags.map((tag) => `<${type} ${mapAttrs(tag)}${closing}`)
 }
 
 function generateRawTags(tags = []) {
   if (typeof tags === 'string' || tags instanceof String) {
     return tags
   }
-  return tags.map(tag => tag)
+  return tags.map((tag) => tag)
 }
 
 function webpackArtifacts(files = [], publicPath = '', attrs = {}, type) {
-  const tag = file =>
+  const tag = (file) =>
     type === 'script'
       ? Object.assign(attrs, { src: publicPath + file })
       : Object.assign(attrs, { rel: 'stylesheet', href: publicPath + file })
 
-  return files.map(file => generateTags([tag(file)], type)).join('\n')
+  return files.map((file) => generateTags([tag(file)], type)).join('\n')
 }
 
 const emptyLineTrim = new TemplateTag(

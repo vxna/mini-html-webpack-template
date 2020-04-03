@@ -30,28 +30,31 @@
     "common-tags": "^1.8.0"
   },
   "devDependencies": {
-    "@webpack-contrib/test-utils": "^0.1.3",
     "css-loader": "^3.4.2",
     "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.10.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-node": "^11.0.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.2.1",
-    "jest": "^25.1.0",
-    "lint-staged": "^10.0.7",
+    "husky": "^4.2.3",
+    "jest": "^25.2.6",
+    "lint-staged": "^10.1.1",
+    "memfs": "^3.1.2",
     "mini-css-extract-plugin": "^0.9.0",
-    "mini-html-webpack-plugin": "^2.2.1",
-    "prettier": "^1.19.1",
-    "webpack": "^4.41.5"
+    "mini-html-webpack-plugin": "^3.0.5",
+    "prettier": "^2.0.2",
+    "webpack": "^4.42.1"
   },
   "eslintConfig": {
     "extends": [
       "standard",
       "prettier"
-    ]
+    ],
+    "env": {
+      "jest": true
+    }
   },
   "prettier": {
     "singleQuote": true,
