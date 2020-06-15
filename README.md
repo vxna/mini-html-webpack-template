@@ -1,6 +1,6 @@
 # @vxna/mini-html-webpack-template
 
-[![Build Status](https://travis-ci.com/vxna/mini-html-webpack-template.svg)](https://travis-ci.com/vxna/mini-html-webpack-template) [![npm](https://img.shields.io/npm/v/@vxna/mini-html-webpack-template.svg)](https://www.npmjs.com/package/@vxna/mini-html-webpack-template)
+[![Build Status](https://travis-ci.com/vxna/mini-html-webpack-template.svg)](https://travis-ci.com/vxna/mini-html-webpack-template) [![npm version](https://badge.fury.io/js/%40vxna%2Fmini-html-webpack-template.svg)](https://badge.fury.io/js/%40vxna%2Fmini-html-webpack-template)
 
 Template for [mini-html-webpack-plugin](https://github.com/bebraw/mini-html-webpack-plugin) that extends default features with useful subset of options
 
@@ -22,11 +22,11 @@ module.exports = {
         title: 'common-usage',
         favicon: 'https://assets-cdn.github.com/favicon.ico',
         container: 'root',
-        trimWhitespace: true
+        trimWhitespace: true,
       },
-      template: require('@vxna/mini-html-webpack-template')
-    })
-  ]
+      template: require('@vxna/mini-html-webpack-template'),
+    }),
+  ],
 }
 ```
 
@@ -56,23 +56,23 @@ module.exports = {
           meta: [
             {
               name: 'description',
-              content: 'mini-html-webpack-template'
-            }
-          ]
+              content: 'mini-html-webpack-template',
+            },
+          ],
         },
         body: {
-          raw: '<div id="root"></div>'
+          raw: '<div id="root"></div>',
         },
         attrs: {
           js: {
             async: '',
-            type: 'text/javascript'
-          }
-        }
+            type: 'text/javascript',
+          },
+        },
       },
-      template: require('@vxna/mini-html-webpack-template')
-    })
-  ]
+      template: require('@vxna/mini-html-webpack-template'),
+    }),
+  ],
 }
 ```
 
@@ -103,16 +103,16 @@ module.exports = {
   plugins: [
     new MiniHtmlWebpackPlugin({
       context: {
-        title: 'advanced-minification'
+        title: 'advanced-minification',
       },
-      template: ctx =>
+      template: (ctx) =>
         minify(require('@vxna/mini-html-webpack-template')(ctx), {
           collapseWhitespace: true,
           minifyCSS: true,
-          minifyJS: true
-        })
-    })
-  ]
+          minifyJS: true,
+        }),
+    }),
+  ],
 }
 ```
 
