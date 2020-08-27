@@ -30,22 +30,22 @@
     "common-tags": "^1.8.0"
   },
   "devDependencies": {
-    "css-loader": "^3.6.0",
-    "eslint": "^7.2.0",
+    "css-loader": "^4.2.2",
+    "eslint": "^7.7.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
-    "lint-staged": "^10.2.10",
+    "jest": "^26.4.2",
+    "lint-staged": "^10.2.13",
     "memfs": "^3.2.0",
-    "mini-css-extract-plugin": "^0.9.0",
+    "mini-css-extract-plugin": "^0.10.0",
     "mini-html-webpack-plugin": "^3.0.7",
-    "prettier": "^2.0.5",
-    "webpack": "^4.43.0"
+    "prettier": "^2.1.1",
+    "webpack": "^4.44.1"
   },
   "eslintConfig": {
     "extends": [

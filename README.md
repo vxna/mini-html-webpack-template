@@ -1,6 +1,6 @@
 # @vxna/mini-html-webpack-template
 
-[![Build Status](https://travis-ci.com/vxna/mini-html-webpack-template.svg)](https://travis-ci.com/vxna/mini-html-webpack-template) [![npm version](https://badge.fury.io/js/%40vxna%2Fmini-html-webpack-template.svg)](https://badge.fury.io/js/%40vxna%2Fmini-html-webpack-template)
+[![Build Status](https://github.com/vxna/mini-html-webpack-template/workflows/test/badge.svg)](https://github.com/vxna/mini-html-webpack-template/actions?query=workflow%3Atest+branch%3Amaster) [![npm](https://img.shields.io/npm/v/@vxna/mini-html-webpack-template.svg)](https://www.npmjs.com/package/@vxna/mini-html-webpack-template)
 
 Template for [mini-html-webpack-plugin](https://github.com/bebraw/mini-html-webpack-plugin) that extends default features with useful subset of options
 
